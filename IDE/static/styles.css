@@ -1,0 +1,43 @@
+* {
+	margin: 0;
+}
+
+.header {
+	background: #57a958;
+	text-align: center;
+	font-size: 20px;
+	color: white;
+	padding: 10px;
+}
+
+.control-panel {
+	background: lightgray;
+}
+
+.languages {
+    width : 20%;
+	background: white;
+	border: 1px solid gray;
+}
+
+#editor {
+	width: 100%;
+	margin-top: 10px;
+	height: 660px;
+	font-size: 20px;
+}
+
+#input {
+	width: 100%;
+    margin-top: 10px;
+	height: 325px;
+	font-size: 20px;
+}
+
+#output {
+    width: 100%;
+    margin-top: 10px;
+    height: 325px;
+    font-size: 20px;
+}
+
