@@ -24,43 +24,40 @@
 			<div class="navbar-brand">Online IDE</div>
 		</div>
 
-		<form id="creatIDE" method="POST">
-			<nav class="navbar navbar-expand-lg control-panel">
-				<div class="container-fluid">
-					<!-- <div class="navbar-brand">Select Language</div> -->
-
-					<select
-						id="languages"
-						class="d-flex form-select languages"
-						onchange="changeLanguage()"
-					>
-						<option value="python">Python</option>
-						<option value="cpp">C++</option>
-					</select>
-
-					<form class="d-flex" role="run">
-						<button
-							class="btn btn-outline-success"
-							onclick="runCode()"
-						>
-							Run
-						</button>
-					</form>
-				</div>
-			</nav>
-
+		<nav class="navbar navbar-expand-lg control-panel">
 			<div class="container-fluid">
-				<div class="row">
-					<div class="col-8">
-						<div class="editor" id="editor"></div>
-					</div>
-					<div class="col-4">
-						<div class="input" id="input"></div>
-						<div class="output" id="output"></div>
-					</div>
+				<!-- <div class="navbar-brand">Select Language</div> -->
+
+				<select
+					id="languages"
+					class="d-flex form-select languages"
+					onchange="changeLanguage()"
+				>
+					<option value="python">Python</option>
+					<option value="cpp">C++</option>
+				</select>
+
+				<button
+					class="d-flex btn btn-outline-success"
+					onclick="runCode()"
+				>
+					Run
+				</button>
+			</div>
+		</nav>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-8">
+					<div class="editor" id="editor"></div>
+				</div>
+				<div class="col-4">
+					<div class="input" id="input"></div>
+					<div class="output" id="output"></div>
 				</div>
 			</div>
-		</form>
+		</div>
+
 		<!-- {% block extrascripts %} -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<!-- <script src="js/lib/ace.js"></script>

@@ -1,21 +1,3 @@
-function getCookie(name) {
-    let cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
-            // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
-        }
-    }
-    return cookieValue;
-}
-const csrftoken = getCookie('csrftoken');
-
-
 let editor;
 let input;
 let output;
@@ -52,28 +34,24 @@ function runCode() {
     let code = editor.getValue();
     let inp = input.getValue();
     let language = $("#languages").val();
+    
     let datas = {
-        "code": code,
-        "input": inp,
-        "language": language,
+        'code': code,
+        'input': inp,
+        'language': language,
     };
 
+    output.setValue("runnig...");
+    
     $.ajax({
         type: "POST",
-        url: "",
-        data: JSON.stringify(datas),
-        contentType: "application/json",
+        url: "http://127.0.0.1:8000/IDE/",
+        data: datas,
+        // data: JSON.stringify(datas),
+        ContentType: 'application/json',
         success: function(data) {
-            output.setValue(data);
+            output.setValue(data.result);
         }
     });
-
-    // $.ajax({
-    //     type: "POST",
-    //     url: "",
-    //     data: datas,
-    //     success: success,
-    //     dataType: dataType
-    //   });
 
 }
